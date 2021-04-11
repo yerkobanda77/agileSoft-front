@@ -1,0 +1,28 @@
+<div class="p-grid">
+    <div class="p-col-12 p-md-6 p-lg-4 p-xl-offset-4" style="padding-top: 5%;">
+        <p-panel header="BIENVENIDO A AGILE MOVIES">
+            <div class="p-grid">
+                <div class="p-col-12 p-md-6 p-lg-6 centrar">
+                    USUARIO:
+                </div>
+                <div class="p-col-12 p-md-6 p-lg-6" >
+                    <div class="p-field">
+                        <input id="username" [(ngModel)]="login.username" type="username"  pInputText [ngClass]="classUsername" (keyup)="limpiarErrores(0,$event);"/>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-6 p-lg-6 centrar">
+                    CONTRASEÑA:
+                </div>
+                <div class="p-col-12 p-md-6 p-lg-6" >
+                    <input id="password" [(ngModel)]="login.password" type="password"  pInputText [ngClass]="classPassword" (keyup)="limpiarErrores(1,$event)"/>
+                </div>
+                <div class="p-col-12" style="text-align: center;">
+                    <button pButton pRipple type="button" label="ENTRAR" class="p-button-success" (click)="validarLogin()"></button>
+                </div>
+                <div class="p-col-12">
+                    <p-messages [(value)]="errores"></p-messages>
+                </div>
+            </div>
+        </p-panel>
+    </div>
+</div>

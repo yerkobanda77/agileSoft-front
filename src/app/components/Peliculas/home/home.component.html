@@ -1,0 +1,15 @@
+<app-topbar></app-topbar>
+<p-toast [style]="{marginTop: '80px'}"></p-toast>
+
+<div class="p-grid" style="margin-top: 20px;">
+    <div class="p-col-12">
+           <app-estreno [displayEstreno]="displayEstreno" (actionEstreno)="actionEstreno($event)"></app-estreno> 
+    </div>
+    <div class="p-col-12">
+        <app-populares [displayPopulares]="displayPopulares" (actionPopulares)="actionPopulares($event)"></app-populares>
+    </div>
+    <div class="p-col-12">
+        <app-detalle [displayDetalle]="displayDetalle" [ruta_principal]="ruta_principal" [pelicula]="pelicula" (actionDetalle)="actionDetalle($event)"></app-detalle>
+    </div>
+</div>
+

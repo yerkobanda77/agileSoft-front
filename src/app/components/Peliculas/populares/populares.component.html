@@ -1,0 +1,31 @@
+<div class="p-grid" *ngIf="displayPopulares">
+    <div class="p-col-12">
+        <p-panel >
+            <ng-template pTemplate="header">
+                <h2 style="color: white;">Películas más Populares</h2>
+            </ng-template>
+            <div class="p-col-12">
+                <p-virtualScroller [value]="peliculasAgrupadas" scrollHeight="750px" [itemSize]="350" [rows]="5"
+                    [lazy]="true" (onLazyLoad)="loadCarsLazy($event)">
+                    <ng-template let-peliculas pTemplate="item">
+                        <div class="p-grid" style="margin-bottom: 25px;">
+                            <div *ngFor="let pelicula of peliculas" class="p-col-3" (click)="detalle(pelicula)" style="padding: 25px 25px 25px 25px;">
+                                <div class="p-grid" style="cursor: pointer;">
+                                    <div class="p-col-12">
+                                        <img src="{{ruta_principal}}{{pelicula.backdrop_path}}" width="100%" [alt]="pelicula.title" />
+                                    </div>
+                                    <div class="p-col-12" style="text-align: center;">
+                                        <strong>{{pelicula.title}}</strong>
+                                    </div>
+                                </div>                        
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template let-peliculas pTemplate="loadingItem">
+                        <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+                    </ng-template>
+                </p-virtualScroller>
+            </div>
+        </p-panel>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<p-menubar [model]="items">
+    <ng-template pTemplate="start">
+        <img src="assets/images/agilesoft-logo.png" height="40" class="p-mr-2">
+    </ng-template>
+    <ng-template pTemplate="end">
+        <strong style="margin-right: 5px;">Hola {{usuario.firstName}} {{usuario.lastName}} </strong> 
+        <button pButton pRipple type="button" icon="pi pi-user" class="p-button-rounded p-button-success" style="margin-right: 5px;"></button>
+        <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger" pTooltip="Cerrar Sesión" (click)="cerrarSesion()"></button>
+    </ng-template>
+</p-menubar>

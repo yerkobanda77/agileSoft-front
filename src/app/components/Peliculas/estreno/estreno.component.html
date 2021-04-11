@@ -1,0 +1,42 @@
+<div class="p-grid" *ngIf="displayEstreno">
+    <div class="p-col-12">
+        <p-panel >
+            <ng-template pTemplate="header">
+                <h1 style="color: white;">Películas en Estreno</h1>
+            </ng-template>
+            <div class="p-col-12">
+                <p-carousel [value]="peliculas" [numVisible]="4" [numScroll]="1" [responsiveOptions]="responsiveOptions" (onPage)="page($event)" [page]="pagina">
+                    <ng-template let-pelicula pTemplate="item">
+                        <div class="p-grid" >
+                            <div class="p-col-12" (click)="detalle(pelicula)">
+                                <div class="p-mb-3" >
+                                    <img src="{{ruta_principal}}{{pelicula.poster_path}}" width="90%" style="cursor: pointer; height: 100% !important;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </p-carousel>
+            </div>
+        </p-panel>   
+
+        <!-- <div class="notifiContent"  #notifiContent  (wheel)="onWheel($event)" id="notifiContent"  >
+            <table   
+                style="height: 350px;"
+                infinite-scroll
+                [infiniteScrollDistance]="1"
+                [infiniteScrollThrottle]="2"
+                [horizontal]="true"
+                [fromRoot]="true"
+                [infiniteScrollContainer]="'.notifiContent'"
+                [scrollWindow]="false"
+                (scrolled)="onScrollDown()"
+                >
+                <tr>
+                    <th *ngFor="let pelicula of peliculas" (click)="detalle(pelicula)">
+                        <img src="{{ruta_principal}}{{pelicula.backdrop_path}}" [alt]="pelicula.title" />
+                    </th>
+                </tr>
+            </table>
+        </div> -->
+    </div>
+</div>
